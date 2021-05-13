@@ -135,7 +135,7 @@
                    MOVE 78156 TO IDO
                    MOVE 'SUCESS' TO MSGO
             ELSE
-                   MOVE "ENTER 10000000101 AS ACCT NO" TO MSGO.
+                   MOVE "ENTER 100000001001 AS ACCT NO" TO MSGO.
        PROCESS-PARA-EXIT.
            EXIT.
 
