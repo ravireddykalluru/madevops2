@@ -3,7 +3,7 @@
        ENVIRONMENT DIVISION.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-      *         COPY DFHAID.
+               COPY DFHAID.
                COPY CBZMAP.
         01    DFHAID.
          02  DFHNULL   PIC  X  VALUE IS X'00'.
