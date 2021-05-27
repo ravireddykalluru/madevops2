@@ -44,11 +44,13 @@ buildUtils.createLanguageDatasets(langQualifier)
     // Parse the playback from the bzucfg file  ** Modified Anup start
     Boolean hasPlayback = true
     String xml = new File(buildUtils.getAbsolutePath(buildFile)).getText("IBM-1047")
-
+    println "xml ${xml}"
     String playback;
     for (line in xml.split('\n')) {
+        println "line ${line}"
         if (line.contains("runner:playback moduleName")) {
             playback = line.split("=")[1].split("\"")[1]
+            println "playback ${playback}"
         }
     }
     // Parse the playback from the bzucfg file  ** Modified Anup end
