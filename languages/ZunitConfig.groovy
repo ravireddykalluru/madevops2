@@ -27,9 +27,13 @@ buildUtils.createLanguageDatasets(langQualifier)
 	println "*** Building file $buildFile"
 
 	String member = CopyToPDS.createMemberName(buildFile)
+	
+	println "Member ${member}"
 
 	File logFile = new File("${props.buildOutDir}/${member}.zunit.jcl.log")
 	File reportLogFile = new File("${props.buildOutDir}/${member}.zunit.report.log")
+	
+	println "lMember ${logFile}"
 
 	// copy build file and dependency files to data sets
 	String rules = props.getFileProperty('zunit_resolutionRules', buildFile)
@@ -40,9 +44,13 @@ buildUtils.createLanguageDatasets(langQualifier)
 	Boolean hasPlayback = false
 	String playback
 	(hasPlayback, playback) = getPlaybackFile(buildFile);
+	
+	println "pmember ${playback}"
 
 	// Upload BZUCFG file to a BZUCFG Dataset
 	buildUtils.copySourceFiles(buildUtils.getAbsolutePath(buildFile), props.zunit_bzucfgPDS, props.zunit_bzuplayPDS, dependencyResolver)
+	
+	println "CMember copy done"
 
 	// Create JCLExec String
 	String jobcard = props.jobCard.replace("\\n", "\n")
