@@ -5,8 +5,8 @@
       *| COMPONENT: IBM Z/OS AUTOMATED UNIT TESTING FRAMEWORK (ZUNIT)  |
       *|   FOR ENTERPRISE COBOL AND PL/I                               |
       *| PROGRAM: ENTERPRISE COBOL ZUNIT TEST CASE FOR DYNAMIC RUNNER  |
-      *| DATE GENERATED: 05/18/2021 23:50                              |
-      *| ID: ce7010ab-b215-41d6-b1de-0c21d20932e2                      |
+      *| DATE GENERATED: 05/27/2021 05:16                              |
+      *| ID: 6bb7b138-2b12-474f-959c-146f745594c0                      |
       *+---------------------------------------------------------------+
       *+---------------------------------------------------------------+
       *| TEST_TEST2                                                    |
@@ -38,13 +38,13 @@
             5 PIC X(6) DISPLAY VALUE 'OLIVIA'.
             5 PIC X(44) DISPLAY VALUE SPACES.
           3 ZUT00000001.
-            5 PIC X(10) DISPLAY VALUE '2021-05-18'.
+            5 PIC X(10) DISPLAY VALUE '2021-05-27'.
           3 ZUT00000002.
-            5 PIC X(8) DISPLAY VALUE '02.50.23'.
+            5 PIC X(8) DISPLAY VALUE '05.13.53'.
           3 ZUT00000003.
-            5 PIC X(10) VALUE X'D6D3C9E5C9C140C9E240'.
-            5 PIC X(10) VALUE X'C1D3D9C5C1C4E840D9C5'.
-            5 PIC X(10) VALUE X'C7C9E2E3C5D9C5C40000'.
+            5 PIC X(10) VALUE X'D6D3C9E5C9C140D9C5C7'.
+            5 PIC X(10) VALUE X'C9E2E3C5D9C5C440E2E4'.
+            5 PIC X(10) VALUE X'C3C3C5E2E2C6E4D34040'.
             5 PIC X(10) VALUE X'00000000000000000000'.
             5 PIC X(10) VALUE X'00000000000000000000'.
             5 PIC X(10) VALUE X'00000000000000000000'.
@@ -457,7 +457,7 @@
        WORKING-STORAGE SECTION.
        01 AZ-TEST-NAME-LEN      PIC S9(9) COMP-5.
        01 AZ-TESTCASE-ID        PIC X(36)
-           VALUE 'ce7010ab-b215-41d6-b1de-0c21d20932e2'.
+           VALUE '6bb7b138-2b12-474f-959c-146f745594c0'.
        LINKAGE SECTION.
        01 AZ-TEST               PIC X(80).
        01 AZ-TEST-ID            PIC X(80).
