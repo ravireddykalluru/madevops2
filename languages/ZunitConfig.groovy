@@ -44,8 +44,6 @@ buildUtils.createLanguageDatasets(langQualifier)
     // Upload BZUCFG file to a BZUCFG Dataset
     buildUtils.copySourceFiles(buildUtils.getAbsolutePath(buildFile), props.zunit_bzucfgPDS, props.zunit_bzuplayPDS, dependencyResolver)
     
-    println "CMember copy done"
-
     // Create JCLExec String
     String jobcard = props.jobCard.replace("\\n", "\n")
     String jcl = jobcard
@@ -216,7 +214,6 @@ def getRepositoryClient() {
  */
 def getPlaybackFile(String xmlFile) {
     String xml = new File(buildUtils.getAbsolutePath(xmlFile)).getText("IBM-1047")
-    println "xml ${xml}"
     def parser = new XmlParser().parseText(xml)
     if (parser.'runner:playback'.playbackFile.size()==0) return [false, null]
     else {
