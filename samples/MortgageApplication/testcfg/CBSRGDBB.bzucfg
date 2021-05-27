@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<runner:RunnerConfiguration xmlns:runner="http://www.ibm.com/zUnit/3.0.0.0/TestRunner" id="e9b13a77-9fd6-4bb3-8e6a-baac803e6f0a">
+  <runner:options contOnTestCaseError="false" contOnTestCaseFail="true" contOnTestError="false" contOnTestFail="true"/>
+  <runner:testCase moduleName="TCBSRGDB">
+    <test name="TEST2" entry="TEST_TEST2" type="CICS" init="BZU_INIT" term="BZU_TERM" program="CBSRGDBB" commarea="0" skipTest="false" resetFile="true" stubCall="true" dummy="false"/>
+  </runner:testCase>
+  <runner:playback moduleName="CBSRGDBB">
+    <playbackFile name="DBB.ZUNIT.PB.CBSRGDBB" localName="CBSRGDBB.plbck"/>
+  </runner:playback>
+  <runner:fileAttributes hlqDdName="AZUHLQ"/>
+</runner:RunnerConfiguration>
