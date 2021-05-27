@@ -37,6 +37,8 @@ buildUtils.createLanguageDatasets(langQualifier)
 
 	// copy build file and dependency files to data sets
 	String rules = props.getFileProperty('zunit_resolutionRules', buildFile)
+	
+	println "rMember ${rules}"
 
 	DependencyResolver dependencyResolver = buildUtils.createDependencyResolver(buildFile, rules)
 
