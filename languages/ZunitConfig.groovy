@@ -37,22 +37,22 @@ buildUtils.createLanguageDatasets(langQualifier)
     DependencyResolver dependencyResolver = buildUtils.createDependencyResolver(buildFile, rules)
 
     // Parse the playback from the bzucfg file
-    // Boolean hasPlayback = false
-    // String playback
-    // (hasPlayback, playback) = getPlaybackFile(buildFile);
+    Boolean hasPlayback = false
+    String playback
+     (hasPlayback, playback) = getPlaybackFile(buildFile);
     
     // Parse the playback from the bzucfg file  ** Modified Anup start
-    Boolean hasPlayback = true
-    String xml = new File(buildUtils.getAbsolutePath(buildFile)).getText("IBM-1047")
-    println "xml ${xml}"
-    String playback;
-    for (line in xml.split('\n')) {
-        println "line ${line}"
-        if (line.contains("runner:playback moduleName")) {
-            playback = line.split("=")[1].split("\"")[1]
-            println "playback ${playback}"
-        }
-    }
+    // Boolean hasPlayback = true
+    // String xml = new File(buildUtils.getAbsolutePath(buildFile)).getText("IBM-1047")
+    // println "xml ${xml}"
+    // String playback;
+    // for (line in xml.split('\n')) {
+    //    println "line ${line}"
+    //    if (line.contains("runner:playback moduleName")) {
+    //        playback = line.split("=")[1].split("\"")[1]
+    //        println "playback ${playback}"
+    //    }
+    // }
     // Parse the playback from the bzucfg file  ** Modified Anup end
 
     // Upload BZUCFG file to a BZUCFG Dataset
