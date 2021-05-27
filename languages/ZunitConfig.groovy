@@ -39,7 +39,7 @@ buildUtils.createLanguageDatasets(langQualifier)
     // Parse the playback from the bzucfg file
     Boolean hasPlayback = false
     String playback
-     (hasPlayback, playback) = getPlaybackFile(buildFile);
+     (hasPlayback, playback) = (buildFile);
     
     // Parse the playback from the bzucfg file  ** Modified Anup start
     // Boolean hasPlayback = true
@@ -228,6 +228,7 @@ def getRepositoryClient() {
  */
 def getPlaybackFile(String xmlFile) {
     String xml = new File(buildUtils.getAbsolutePath(xmlFile)).getText("IBM-1047")
+    println "xml ${xml}"
     def parser = new XmlParser().parseText(xml)
     if (parser.'runner:playback'.playbackFile.size()==0) return [false, null]
     else {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<runner:RunnerConfiguration xmlns:runner="http://www.ibm.com/zUnit/3.0.0.0/TestRunner" id="bc30e997-8207-4b1f-92d0-2af1366047e7">
+<runner:RunnerConfiguration xmlns:runner="http://www.ibm.com/zUnit/3.0.0.0/TestRunner" id="e73880af-4dc6-4f80-a71a-7fa995e6a7af">
   <runner:options contOnTestCaseError="false" contOnTestCaseFail="true" contOnTestError="false" contOnTestFail="true"/>
   <runner:testCase moduleName="TCBSRGDB">
-    <test name="TEST2" entry="TEST_TEST2" type="CICS" init="BZU_INIT" term="BZU_TERM" program="CBSRGDBB" commarea="0" skipTest="false" resetFile="true" stubCall="true" dummy="false"/>
+    <test name="dummy" entry="dummy" type="CICS" init="dummy" term="dummy" program="CBSRGDBB" commarea="177" skipTest="true" resetFile="true" stubCall="true" dummy="true"/>
+    <test name="TEST3" entry="TEST_TEST3" type="CICS" init="BZU_INIT" term="BZU_TERM" program="CBSRGDBB" commarea="0" skipTest="false" resetFile="false" stubCall="true" dummy="false"/>
   </runner:testCase>
   <runner:playback moduleName="CBSRGDBB">
     <playbackFile name="DBB.ZUNIT.PB.CBSRGDBB" localName="CBSRGDBB.plbck"/>

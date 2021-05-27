@@ -5,15 +5,15 @@
       *| COMPONENT: IBM Z/OS AUTOMATED UNIT TESTING FRAMEWORK (ZUNIT)  |
       *|   FOR ENTERPRISE COBOL AND PL/I                               |
       *| PROGRAM: ENTERPRISE COBOL ZUNIT TEST CASE FOR DYNAMIC RUNNER  |
-      *| DATE GENERATED: 05/27/2021 05:16                              |
+      *| DATE GENERATED: 05/27/2021 08:55                              |
       *| ID: 6bb7b138-2b12-474f-959c-146f745594c0                      |
       *+---------------------------------------------------------------+
       *+---------------------------------------------------------------+
-      *| TEST_TEST2                                                    |
-      *|     THIS PROGRAM IS FOR TEST TEST2                            |
+      *| TEST_TEST3                                                    |
+      *|     THIS PROGRAM IS FOR TEST TEST3                            |
       *+---------------------------------------------------------------+
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. 'TEST_TEST2'.
+       PROGRAM-ID. 'TEST_TEST3'.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
        01 PROGRAM-NAME   PIC X(8)  VALUE 'CBSRGDBB'.
@@ -40,7 +40,7 @@
           3 ZUT00000001.
             5 PIC X(10) DISPLAY VALUE '2021-05-27'.
           3 ZUT00000002.
-            5 PIC X(8) DISPLAY VALUE '05.13.53'.
+            5 PIC X(8) DISPLAY VALUE '08.54.04'.
           3 ZUT00000003.
             5 PIC X(10) VALUE X'D6D3C9E5C9C140D9C5C7'.
             5 PIC X(10) VALUE X'C9E2E3C5D9C5C440E2E4'.
@@ -158,7 +158,7 @@
        PROCEDURE DIVISION USING AZ-TEST
            DFHEIBLK DFHCOMMAREA.
       * START
-           DISPLAY 'TEST_TEST2 STARTED...'
+           DISPLAY 'TEST_TEST3 STARTED...'
            MOVE 0 TO AZ-TEST-NAME-LEN.
            INSPECT AZ-TEST TALLYING AZ-TEST-NAME-LEN FOR
            CHARACTERS BEFORE INITIAL SPACE.
@@ -267,7 +267,7 @@
              PERFORM THROW-ASSERTION
            END-IF
       * END
-           DISPLAY 'TEST_TEST2 SUCCESSFUL.'
+           DISPLAY 'TEST_TEST3 SUCCESSFUL.'
            GOBACK.
        INITIALIZE-PARM.
            EXIT.
@@ -333,7 +333,7 @@
            SUBTRACT 1 FROM TRACE-LEN OF BZ-TRACE
            CALL BZUTRACE USING BZ-TRACE
            EXIT.
-       END PROGRAM TEST_TEST2.
+       END PROGRAM TEST_TEST3.
       *+---------------------------------------------------------------+
       *| BZU_TEST                                                      |
       *|     THIS PROGRAM IS CALLBACK DEFINITION FOR TEST              |
@@ -437,7 +437,7 @@
            EVALUATE AZ-TEST(1:AZ-TEST-NAME-LEN)
            WHEN SPACE
              CONTINUE
-           WHEN 'TEST2'
+           WHEN 'TEST3'
              MOVE 0 TO RETURN-CODE
            WHEN OTHER
              CONTINUE
@@ -817,8 +817,8 @@
                EVALUATE AZ-TEST(1:AZ-TEST-LEN)
                  WHEN SPACE
                    CONTINUE
-                 WHEN 'TEST2'
-                   PERFORM O0E080-TEST2
+                 WHEN 'TEST3'
+                   PERFORM O0E080-TEST3
                    CONTINUE
                  WHEN OTHER
                    CONTINUE
@@ -860,7 +860,7 @@
                EVALUATE AZ-TEST(1:AZ-TEST-LEN)
                  WHEN SPACE
                    CONTINUE
-                 WHEN 'TEST2'
+                 WHEN 'TEST3'
                    CONTINUE
                  WHEN OTHER
                    CONTINUE
@@ -868,7 +868,7 @@
              END-IF
            END-IF.
            PERFORM TEARDOWN.
-       O0E080-TEST2.
+       O0E080-TEST3.
            IF AZ-RECORD-COUNT-OT(1) = 0 THEN
              CONTINUE
            ELSE
