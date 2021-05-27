@@ -37,9 +37,21 @@ buildUtils.createLanguageDatasets(langQualifier)
     DependencyResolver dependencyResolver = buildUtils.createDependencyResolver(buildFile, rules)
 
     // Parse the playback from the bzucfg file
-    Boolean hasPlayback = false
-    String playback
-    (hasPlayback, playback) = getPlaybackFile(buildFile);
+    // Boolean hasPlayback = false
+    // String playback
+    // (hasPlayback, playback) = getPlaybackFile(buildFile);
+    
+    // Parse the playback from the bzucfg file  ** Modified Anup start
+    Boolean hasPlayback = true
+    String xml = new File(buildUtils.getAbsolutePath(buildFile)).getText("IBM-1047")
+
+    String playback;
+    for (line in xml.split('\n')) {
+        if (line.contains("runner:playback moduleName")) {
+            playback = line.split("=")[1].split("\"")[1]
+        }
+    }
+    // Parse the playback from the bzucfg file  ** Modified Anup end
 
     // Upload BZUCFG file to a BZUCFG Dataset
     buildUtils.copySourceFiles(buildUtils.getAbsolutePath(buildFile), props.zunit_bzucfgPDS, props.zunit_bzuplayPDS, dependencyResolver)
@@ -213,18 +225,12 @@ def getRepositoryClient() {
  * returns containsPlayback, 
  */
 def getPlaybackFile(String xmlFile) {
-    println "getPlaybackFile"
     String xml = new File(buildUtils.getAbsolutePath(xmlFile)).getText("IBM-1047")
-    println "getPlaybackFile1"
     def parser = new XmlParser().parseText(xml)
-    println "getPlaybackFile2"
     if (parser.'runner:playback'.playbackFile.size()==0) return [false, null]
     else {
-        println "getPlaybackFile3"
         String playbackFileName = parser.'runner:playback'.@moduleName[0]
-        println "getPlaybackFile4"
         return [true, playbackFileName]
-        println "getPlaybackFile5"
     }
 }
 
