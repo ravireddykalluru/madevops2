@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//MortgageApplication/cobol/CBSRGDBB.cbl=UTF-8
 encoding//MortgageApplication/testcase/TCBSRGDB.cbl=Cp1252
 encoding//zunitTest/testcase/TCBSRGDB.cbl=Cp1252
 encoding//zunitTest/testcase/TCGZUNIT.cbl=Cp1252
