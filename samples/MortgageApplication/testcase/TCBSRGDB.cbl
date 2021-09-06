@@ -5,8 +5,8 @@
       *| COMPONENT: IBM Z/OS AUTOMATED UNIT TESTING FRAMEWORK (ZUNIT)  |
       *|   FOR ENTERPRISE COBOL AND PL/I                               |
       *| PROGRAM: ENTERPRISE COBOL ZUNIT TEST CASE FOR DYNAMIC RUNNER  |
-      *| DATE GENERATED: 06/02/2021 02:24                              |
-      *| ID: 1b370a51-5a49-4778-a4d4-59831d75acb1                      |
+      *| DATE GENERATED: 09/06/2021 10:24                              |
+      *| ID: 9be407fb-a469-42fd-a765-53d90da32a38                      |
       *+---------------------------------------------------------------+
       *+---------------------------------------------------------------+
       *| TEST_TEST2                                                    |
@@ -38,9 +38,9 @@
             5 PIC X(6) DISPLAY VALUE 'OLIVIA'.
             5 PIC X(44) DISPLAY VALUE SPACES.
           3 ZUT00000001.
-            5 PIC X(10) DISPLAY VALUE '2021-06-02'.
+            5 PIC X(10) DISPLAY VALUE '2021-09-06'.
           3 ZUT00000002.
-            5 PIC X(8) DISPLAY VALUE '02.22.58'.
+            5 PIC X(8) DISPLAY VALUE '10.21.42'.
           3 ZUT00000003.
             5 PIC X(10) VALUE X'D6D3C9E5C9C140D9C5C7'.
             5 PIC X(10) VALUE X'C9E2E3C5D9C5C440E2E4'.
@@ -97,7 +97,6 @@
            05 AZ-DECBYTE PIC X.
          03 AZ-I PIC S9(8) COMP.
          03 AZ-J PIC S9(8) COMP.
-         03 AZ-K PIC S9(8) COMP.
          03 AZ-Q PIC S9(8) COMP.
          03 AZ-R PIC S9(8) COMP.
          03 AZ-Q1 PIC S9(8) COMP.
@@ -457,7 +456,7 @@
        WORKING-STORAGE SECTION.
        01 AZ-TEST-NAME-LEN      PIC S9(9) COMP-5.
        01 AZ-TESTCASE-ID        PIC X(36)
-           VALUE '1b370a51-5a49-4778-a4d4-59831d75acb1'.
+           VALUE '9be407fb-a469-42fd-a765-53d90da32a38'.
        LINKAGE SECTION.
        01 AZ-TEST               PIC X(80).
        01 AZ-TEST-ID            PIC X(80).
@@ -619,7 +618,7 @@
        END PROGRAM 'EVALOPT'.
       *+---------------------------------------------------------------+
       *| GTMEMRC                                                       |
-      *|     GET DATA AREA FOR RECORD COUNT OF SUBSYSTEM GROUP         |
+      *|     GET DATA AREA FOR RECORD COUNT OF CICS/DB2 GROUP          |
       *+---------------------------------------------------------------+
        IDENTIFICATION DIVISION.
        PROGRAM-ID. 'GTMEMRC'.
